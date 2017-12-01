@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  first_name: MyString
+  last_name: MyString
+  job_title: MyString
+  pay: 9.99
+  phone: MyString
+  schedule_slot: 1
+
+two:
+  employee: two
+  first_name: MyString
+  last_name: MyString
+  job_title: MyString
+  pay: 9.99
+  phone: MyString
+  schedule_slot: 1

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Don't Fret</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+   <nav class="navbar navbar-default" role="navigation">
+     <div class="container">
+
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+           <span class="sr-only">Toggle Navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+      </button>
+        
+     </div>
+     <div class="collapse navbar-collapse" id="main-nav-collapse">
+
+
+    <ul class="nav navbar-nav navbar-left">
+	  <li class="logo-img"><%= image_tag("logo.png", :size => "55x55" ) %></li>
+	  <li><%= link_to "Home", pages_home_path %></li>
+      <li><%= link_to "Orders", pages_orders_path %></li>
+      <li><%= link_to "Inventory", pages_inventory_path %></li>
+	  <li><%= link_to "Reports", pages_reports_path %></li>
+	  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+    </ul>
+   </div>
+
+ </div>
+    </nav>
+
+	
+
+  <body>
+  <div class="wrapper">
+  
+  <div class="content">
+    <div class="row">
+      <div class="col-xs-6">
+        <h1><%= link_to "Browse", pages_inventory_path %></h1>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+    </div>
+    <hr>
+    <%= yield %>
+	
+  </div>
+   
+   </div>
+  </body>
+ 
+</html>

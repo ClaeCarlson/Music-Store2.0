@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+
+<%= form_tag(pages_inventory_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+<%= submit_tag "Search" %>
+<% end %></br>
+
+<table class ="table">
+  <thead>
+    <tr>
+	  <th>Product ID</th>
+      <th>Product type</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product.each do |product| %>
+      <tr>
+		<td><%= product.id %></td>
+        <td><%= product.product_type %></td>
+        <td><%= product.brand %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to "New Transaction", products_path, :method => "get", :class => "button" %>
+
+</form>
+
+<br>
