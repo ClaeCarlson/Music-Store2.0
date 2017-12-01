@@ -27,7 +27,7 @@
 	  <li class="logo-img"><%= image_tag("logo.png", :size => "55x55" ) %></li>
 	  <li><%= link_to "Home", pages_home_path %></li>
       <li><%= link_to "Orders", pages_orders_path %></li>
-      <li><%= link_to "Inventory", pages_inventory_path %></li>
+      <li><%= link_to "Browse", pages_inventory_path %></li>
 	  <li><%= link_to "Reports", pages_reports_path %></li>
 	   <% if user_signed_in? %>
 	  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
@@ -48,7 +48,7 @@
 	 <% if user_signed_in? %>
     <div class="row">
       <div class="col-xs-6">
-        <h1><%= link_to "Browse", pages_inventory_path %></h1>
+        <h1><%= link_to "Don't Fret!", pages_home_path %></h1>
       </div>
 	  
       <div class="col-xs-6 text-right">
