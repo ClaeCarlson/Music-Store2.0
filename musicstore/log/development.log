@@ -1329,3 +1329,425 @@ Processing by PagesController#inventory as HTML
 Completed 200 OK in 956ms (Views: 810.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:19:23 -0600
+Processing by PagesController#home as HTML
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_cart_text.html.erb (476.3ms)
+Completed 200 OK in 23966ms (Views: 23600.0ms | ActiveRecord: 13.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-01 09:20:39 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tEVdw4XxdTDevX77N19FqRv5UFTltFDvuWW3MG+C2I/oV2Y4pUxf0vz01sWRnZ4444Kp4zl2gNuyX+E+hYZDiw=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:20:39 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:20:40 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (348.0ms)
+  Rendered layouts/_cart_text.html.erb (1.0ms)
+Completed 200 OK in 1352ms (Views: 1335.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:20:58 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyscKAjdbpsW9I8LarqZIJY+o70B5NlFENgmNosLQ4iDl/IpuVDMgvnSVziEkdVA40ENPn6nrPLbC0WXzTw7LQ==", "user"=>{"email"=>"bpichen01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'bpichen01@aurora.edu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-12-01 15:20:59', `last_sign_in_at` = '2017-12-01 01:48:42', `sign_in_count` = 6, `updated_at` = '2017-12-01 15:20:59' WHERE `users`.`id` = 2[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1319ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:21:00 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 736ms (Views: 684.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pages/orders" for 127.0.0.1 at 2017-12-01 09:21:04 -0600
+Processing by PagesController#orders as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/orders.html.erb within layouts/application
+  Rendered pages/orders.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 981ms (Views: 922.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:21:06 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 717ms (Views: 620.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/pages/reports" for 127.0.0.1 at 2017-12-01 09:21:12 -0600
+Processing by PagesController#reports as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/reports.html.erb within layouts/application
+  Rendered pages/reports.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 697ms (Views: 641.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:21:13 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 721ms (Views: 664.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/reports" for 127.0.0.1 at 2017-12-01 09:21:16 -0600
+Processing by PagesController#reports as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/reports.html.erb within layouts/application
+  Rendered pages/reports.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_cart_text.html.erb (3.0ms)
+Completed 200 OK in 856ms (Views: 769.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:21:17 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 733ms (Views: 685.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:21:18 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started GET "/pages/reports" for 127.0.0.1 at 2017-12-01 09:21:19 -0600
+  Rendering pages/inventory.html.erb within layouts/application
+Processing by PagesController#reports as HTML
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (7.0ms)
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/reports.html.erb within layouts/application
+  Rendered pages/reports.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 1509ms (Views: 1455.3ms | ActiveRecord: 2.0ms)
+
+
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 1101ms (Views: 943.9ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/pages/orders" for 127.0.0.1 at 2017-12-01 09:21:20 -0600
+Processing by PagesController#orders as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/orders.html.erb within layouts/application
+  Rendered pages/orders.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_cart_text.html.erb (0.0ms)
+Completed 200 OK in 648ms (Views: 601.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:21:27 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (15.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 685ms (Views: 615.6ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:32:10 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (C:/Users/Brandon/sql/musicstore/musicstore/app/views/layouts/application.html.erb:44: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...r.append=( if user_signed_in? );@output_buffer.safe_append='
+...                               ^
+C:/Users/Brandon/sql/musicstore/musicstore/app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	end
+         	   ^
+C:/Users/Brandon/sql/musicstore/musicstore/app/views/layouts/application.html.erb:66: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Brandon/sql/musicstore/musicstore/app/views/layouts/application.html.erb:68: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/layouts/application.html.erb:44: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:66: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:68: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:33:54 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 752ms (Views: 701.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-01 09:33:57 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SseBSw8+7NDJ3uKdwc1yIzGrnVlqT9KAQyztk0h+ejmb8B7m+oWsIUO7s5UhmEEAt0+eFOGCsJs5Ti59DYjkSw=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:33:58 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:33:58 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (194.7ms)
+Completed 200 OK in 1094ms (Views: 1091.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:34:03 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sue3sVaygWXUkTUFghM+Nc/uhesH5NDYSpnDtjOji5qYZXVT77Xdus1UsB+SQFuHq3LRTH1LrF+GnaiR0z0gGA==", "user"=>{"email"=>"bpichen01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'bpichen01@aurora.edu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-12-01 15:34:04', `last_sign_in_at` = '2017-12-01 15:20:59', `sign_in_count` = 7, `updated_at` = '2017-12-01 15:34:04' WHERE `users`.`id` = 2[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 914ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:34:04 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 675ms (Views: 627.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2017-12-01 09:34:25 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 857ms (Views: 754.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-01 09:34:28 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Yst35ymJIQVI8WANDvnQXTln0rH9Xt+BjDNjcqrhG/YMS2Li995PqgKm2KYRhZy9tpDgrH59qc4Q8hi2yWw/8Q=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:34:28 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:34:28 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (221.9ms)
+Completed 200 OK in 1208ms (Views: 1205.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:35:16 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (206.2ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 1263ms (Views: 1260.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:35:36 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (201.1ms)
+Completed 200 OK in 1168ms (Views: 1165.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:35:42 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QdKHNLUo28OqW5LzTGxI0VC1lAC4sas4d1t9y0O9wghPHKB9fXBfSwqP8PbVYyxowhCCVQllRIGCTZeZDiKkdA==", "user"=>{"email"=>"bpichen01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'bpichen01@aurora.edu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-12-01 15:35:43', `last_sign_in_at` = '2017-12-01 15:34:04', `sign_in_count` = 8, `updated_at` = '2017-12-01 15:35:43' WHERE `users`.`id` = 2[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 873ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:35:43 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 629ms (Views: 580.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/inventory" for 127.0.0.1 at 2017-12-01 09:35:46 -0600
+Processing by PagesController#inventory as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/inventory.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  Rendered pages/inventory.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_cart_text.html.erb (15.6ms)
+Completed 200 OK in 648ms (Views: 601.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2017-12-01 09:35:49 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_cart_text.html.erb (1.0ms)
+Completed 200 OK in 652ms (Views: 603.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2017-12-01 09:36:14 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 679ms (Views: 630.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-01 09:36:15 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oiGnaC6kD/Qm9SfCGrmw7VuqCUDltvJ+ZrJ5Wp8+GjYFUNxw7JEO6FVRoD46DJwjdS0dqUmpzB3uDnv/dPGRFg=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:36:16 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:36:16 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (195.1ms)
+Completed 200 OK in 1094ms (Views: 1091.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2017-12-01 09:36:23 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:36:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (205.1ms)
+Completed 200 OK in 1430ms (Views: 1415.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:36:27 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AGza0AWINcUROkE/O2AIxmEgmqDVftfrPKQeGDoCuKOzQj9kJN8JWHOKQ5dU5TZl3ar3IIhs5tm0b6a8mqfinA==", "user"=>{"email"=>"bpichen01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'bpichen01@aurora.edu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-12-01 15:36:27', `last_sign_in_at` = '2017-12-01 15:35:43', `sign_in_count` = 9, `updated_at` = '2017-12-01 15:36:27' WHERE `users`.`id` = 2[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pages/home
+Completed 302 Found in 872ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2017-12-01 09:36:28 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 666ms (Views: 617.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-01 09:36:39 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kfBgECsA37lwxJ4a+t4G0fxizimh+X5kQTVksUh+CPNWCxrWTDJVs+7KtlOM1yqbBFco5rJO9gAYr0yiw3DwTw=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:36:39 -0600
+Processing by PagesController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:36:39 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (238.2ms)
+Completed 200 OK in 1364ms (Views: 1361.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-01 09:36:43 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wpqVQAcFjpZT99aXTJmXML2RaW/bEBtCePQo8xrqsKTud5ah4WsGSaiygsoRYbAwhEZfYRv+tkbZrExFM2hKBA==", "user"=>{"email"=>"bpichen01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'bpichen01@aurora.edu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-12-01 15:36:43', `last_sign_in_at` = '2017-12-01 15:36:27', `sign_in_count` = 10, `updated_at` = '2017-12-01 15:36:43' WHERE `users`.`id` = 2[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 875ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-01 09:36:44 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_cart_text.html.erb (2.0ms)
+Completed 200 OK in 651ms (Views: 604.4ms | ActiveRecord: 1.0ms)
+
+
