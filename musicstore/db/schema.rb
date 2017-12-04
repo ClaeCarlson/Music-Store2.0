@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171130172741) do
     t.string "brand", limit: 45
     t.decimal "price", precision: 20
     t.decimal "stock", precision: 20
+    t.string "stock_level", default: "In Stock"
   end
 
   create_table "schedules", primary_key: "schedule_slot", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,6 +82,6 @@ ActiveRecord::Schema.define(version: 20171130172741) do
 
   add_foreign_key "orders", "users", column: "users_id", name: "fk_orders_users1"
   add_foreign_key "orders_has_products", "orders", column: "orders_order_id", primary_key: "order_id", name: "fk_orders_has_products_orders1"
-  add_foreign_key "orders_has_products", "orders", column: "orders_users_id", primary_key: "users_id", name: "fk_orders_has_products_orders1"
+#  add_foreign_key "orders_has_products", "orders", column: "orders_users_id", primary_key: "users_id", name: "fk_orders_has_products_orders1"
   add_foreign_key "orders_has_products", "products", column: "products_product_id", primary_key: "product_id", name: "fk_orders_has_products_products1"
 end
