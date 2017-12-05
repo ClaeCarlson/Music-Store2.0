@@ -25,11 +25,14 @@
 
     <ul class="nav navbar-nav navbar-left">
 	  <li class="logo-img"><%= image_tag("logo.png", :size => "55x55" ) %></li>
+	  <% if user_signed_in? %>
 	  <li><%= link_to "Home", pages_home_path %></li>
       <li><%= link_to "Orders", pages_orders_path %></li>
-      <li><%= link_to "Browse", pages_inventory_path %></li>
+      <li><%= link_to "Browse", products_path %></li>
+	  <% if current_user.superadmin_role? %>
 	  <li><%= link_to "Reports", pages_reports_path %></li>
-	   <% if user_signed_in? %>
+	  <% end %>
+	   
 	  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 	  <%end%>
     </ul>
