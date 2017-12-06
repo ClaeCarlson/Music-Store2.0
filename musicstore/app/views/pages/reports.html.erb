@@ -1,2 +1,18 @@
-<h1>Pages#reports</h1>
-<p>Find me in app/views/pages/reports.html.erb</p>
+<h1>Reports</h1>
+<style>
+	.button {
+		margin: 50px;
+		border-radius: 15px;
+		width: 100px;
+		height: 60px;
+	}
+</style>
+<body>
+	<div>
+	<%= button_to "Graphs", "/pages/graphs", :method => "get", :class => "button"%>
+
+	<%= button_to "Orders", orders_url, :method => "get", :class => "button" %>
+	</div>
+
+	<%= button_to "Employees", employees_url, :method => "get", :class => "button" %>
+</body>

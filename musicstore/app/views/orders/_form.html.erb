@@ -12,23 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :order_id %>
-    <%= form.text_field :transaction_id, id: :order_transaction_id %>
+    <%= form.label :id %>
+    <%= form.text_field :id, id: :order_id %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :subtotal %>
+    <%= form.text_field :subtotal, id: :order_subtotal %>
   </div>
 
   <div class="field">
-    <%= form.label :transaction_type %>
-    <%= form.text_field :transaction_type, id: :order_transaction_type %>
+    <%= form.label :tax %>
+    <%= form.text_field :tax, id: :order_tax %>
   </div>
 
   <div class="field">
-    <%= form.label :date_time %>
-    <%= form.text_field :date_time, id: :order_date_time %>
+    <%= form.label :shipping %>
+    <%= form.text_field :shipping, id: :order_shipping %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total, id: :order_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_status_id %>
+    <%= form.text_field :order_status_id, id: :order_order_status_id %>
   </div>
 
   <div class="field">
     <%= form.label :users_id %>
-    <%= form.datetime_select :users_id, id: :order_users_id %>
+    <%= form.text_field :users_id, id: :order_users_id %>
   </div>
 
   <div class="actions">
