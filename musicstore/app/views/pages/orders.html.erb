@@ -28,6 +28,8 @@ results = Order.find_by_sql("SELECT * FROM orders WHERE users_id = #{user}" );
         <td><%= "#{order['id']}" %></td>
         <td><%= "#{order['total']}" %></td>
         <td><%= "#{order['created_at']}" %></td>
+         <td><%= link_to 'Delete Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
