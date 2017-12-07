@@ -1,6 +1,7 @@
 <h1>Reports</h1>
 <style>
 	.button {
+		display: inline;
 		margin: 50px;
 		border-radius: 15px;
 		width: 100px;
@@ -8,11 +9,16 @@
 	}
 </style>
 <body>
-	<div>
+
+	<div></div>
+	<div style="display: inline">
 	<%= button_to "Graphs", "/pages/graphs", :method => "get", :class => "button"%>
 
 	<%= button_to "Orders", orders_url, :method => "get", :class => "button" %>
-	</div>
 
 	<%= button_to "Employees", employees_url, :method => "get", :class => "button" %>
+	</div>
+
 </body>
+
+<script type="text/javascript"></script>

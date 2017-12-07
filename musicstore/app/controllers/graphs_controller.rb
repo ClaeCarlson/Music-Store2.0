@@ -48,3 +48,4 @@ class GraphsController < ApplicationController
         end
 
     end
+end
