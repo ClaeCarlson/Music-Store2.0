@@ -58,6 +58,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chart-js-rails (0.1.4)
+      railties (> 3.1)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.2)
@@ -243,6 +245,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
+  chart-js-rails
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise
@@ -252,7 +255,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
-  rails_admin
+  rails_admin (~> 1.2)
   sass-rails (~> 5.0)
   selenium-webdriver
   sprockets-rails
