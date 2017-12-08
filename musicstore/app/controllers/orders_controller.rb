@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -21,6 +22,10 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def checkout
+    order = Order.new(order_params)
+    order.save
+  end
   # POST /orders
   # POST /orders.json
   def create

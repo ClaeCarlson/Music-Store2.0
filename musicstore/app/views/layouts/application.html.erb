@@ -34,7 +34,7 @@
     <% end %>
 	  <% if current_user.superadmin_role? %>
     <li><%= link_to "Home", pages_home_path %></li>
-    <li><%= link_to "Products", products_path %></li>
+    <li><%= link_to "Products", pages_inventory_path %></li>
     <li><%= link_to "Orders", orders_path %></li>
 	  <li><%= link_to "Reports", pages_reports_path %></li>
     <li><%= link_to "Admin", "/admin" %></li>
@@ -62,8 +62,7 @@
       </div>
 	  
       <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-      </div>
+             </div>
     </div>
 	
     <hr>
