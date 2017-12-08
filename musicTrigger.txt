@@ -1,0 +1,12 @@
+Trigger that resets inventory when stock is low.
+
+DELIMITER //
+CREATE TRIGGER restock BEFORE UPDATE ON products
+FOR EACH ROW
+	BEGIN
+		IF NEW.stock < 2 THEN
+			SET NEW.stock = '5';
+		END IF;
+		
+	END;//
+DELIMITER ;

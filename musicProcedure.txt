@@ -1,0 +1,11 @@
+
+
+DELIMITER //
+
+CREATE PROCEDURE prc_add_item (IN p_id INT) 
+BEGIN 
+INSERT INTO products (product_id, product_type, brand, price, stock) 
+VALUES (p_id, "Bass Guitar", "Ibanez", 300.00, 5);
+end;//
+
+DELMITER ;
