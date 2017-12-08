@@ -2,7 +2,7 @@
 
 <h1>Employees</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Employee</th>
@@ -18,7 +18,7 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.employee %></td>
+        <td><%= employee.employee_id %></td>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
         <td><%= employee.job_title %></td>

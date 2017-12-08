@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
 <p id="notice"><%= notice %></p>
 
 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
@@ -6,45 +9,182 @@
 <% end %></br>
 
 
-<h3 class="text-center">Products for Sale</h3>
-
+<h3 class="text-center">Products</h3>
+<!--<div id="userID"><%=current_user.id=%></div>!-->
 <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <% @products.each do |product| %>
-      <%= render "product_row", product: product, order_item: @order_item %>
-    <% end %>
-  </div>
-</div>
+	<div class="col-xs-12">
+		<div class="well">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Guitar</br>Fender</p>
+				</div>
+				<div class="col-md-4">
+
+					<p class="text-right">Unit Price: <span id="price" style="color: green">$<span id="price1">10</span></span></p>
+					<div class="input-group">
+						<input type="number" style="height: 33px" value="1" id="quant1">
+						<div class="input-group-btn" id="btnsubmit1">
+							<btn class= "btn btn-primary"> ADD TO CART</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="well">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Banjo</br>Takamine</p>
+				</div>
+				<div class="col-md-4">
+
+					<p class="text-right">Unit Price: <span id="price" style="color: green">$<span id="price2">200</span></span></p>
+					<div class="input-group">
+						<input type="number" style="height: 33px" value="1" id="quant2">
+						<div class="input-group-btn" id="btnsubmit2">
+							<btn class= "btn btn-primary"> ADD TO CART</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="well">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Accessory</br>D'Addario</p>
+				</div>
+				<div class="col-md-4">
+
+					<p class="text-right">Unit Price: <span id="price" style="color: green">$<span id="price3">10</span></span></p>
+					<div class="input-group">
+						<input type="number" style="height: 33px" value="1" id="quant3">
+						<div class="input-group-btn" id="btnsubmit3">
+							<btn class= "btn btn-primary"> ADD TO CART</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="well">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Accordion</br>Casio</p>
+				</div>
+				<div class="col-md-4">
+
+					<p class="text-right">Unit Price: <span id="price" style="color: green">$<span id="price4">199</span></span></p>
+					<div class="input-group">
+						<input type="number" style="height: 33px" value="1" id="quant4">
+						<div class="input-group-btn" id="btnsubmit4">
+							<btn class= "btn btn-primary"> ADD TO CART</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="well">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Piano</br>Casio</p>
+				</div>
+				<div class="col-md-4">
+
+					<p class="text-right">Unit Price: <span id="price" style="color: green">$<span id="price5">399</span></span></p>
+					<div class="input-group">
+						<input type="number" style="height: 33px" value="1" id="quant5">
+						<div class="input-group-btn" id="btnsubmit5">
+							<btn class= "btn btn-primary"> ADD TO CART</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<tr><td> Total $<input type="text" id="total" value=0>
+								<br> <button id="checkout" class="btn">Checkout</button>
 
 
-<table class = 'table'>
-  <thead>
-    <tr>
-      <th>Product type</th>
-      <th>Brand</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th>Stock Level</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @product.each do |product| %>
-      <tr>
-        <td><%= product.product_type %></td>
-        <td><%= product.brand %></td>
-        <td><%= product.price %></td>
-        <td><%= product.stock %></td>
-	<td><%= product.stock_level %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+	</div>
+</div><br><br><br>
 
-<br>
+<script>
+	$(document).ready(function(){
 
-<%= link_to 'New Product', new_product_path %>
+		$("#btnsubmit1").click(function(){
+			var q = $("#quant1").val();
+			var p = $("#price1").text();
+			var sum = p * q;
+			var currenttot = parseInt($("#total").val());
+			sum += currenttot;
+			$("#total").val(sum);
+		});
+
+
+		$("#btnsubmit2").click(function(){
+			var q = $("#quant2").val();
+			var p = $("#price2").text();
+			var sum = p * q;
+			var currenttot = parseInt($("#total").val());
+			sum += currenttot;
+			$("#total").val(sum);
+		});
+
+
+		$("#btnsubmit3").click(function(){
+			var q = $("#quant3").val();
+			var p = $("#price3").text();
+			var sum = p * q;
+			var currenttot = parseInt($("#total").val());
+			sum += currenttot;
+			$("#total").val(sum);
+		});
+
+
+		$("#btnsubmit4").click(function(){
+			var q = $("#quant4").val();
+			var p = $("#price4").text();
+			var sum = p * q;
+			var currenttot = parseInt($("#total").val());
+			sum += currenttot;
+			$("#total").val(sum);
+		});
+
+
+		$("#btnsubmit5").click(function(){
+			var q = $("#quant5").val();
+			var p = $("#price5").text();
+			var sum = p * q;
+			var currenttot = parseInt($("#total").val());
+			sum += currenttot;
+			$("#total").val(sum);
+		});
+
+		$("#checkout").click(function(){
+			var totalCost = parseInt($("#total").val());
+			var user = <%=current_user.id=%>;
+			var time = "<%=Time.now=%>";
+
+			$.ajax({
+				url: "/orders",
+				type: "POST",
+
+				data: { order: {id : null, subtotal : 0, tax : 0, shipping : 0, total : totalCost, order_status_id : 1, created_at : time, updated_at : time, users_id: user}},
+				success: function() {
+					alert("Successfully created Order");
+				}
+			});
+
+
+
+		});
+	});
+</script>

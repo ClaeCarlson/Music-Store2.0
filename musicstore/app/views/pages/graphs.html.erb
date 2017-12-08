@@ -1,0 +1,62 @@
+<style>
+    .jumbotron {
+        margin-top: 10%;
+        
+    }
+
+    
+</style>
+
+<h2 style="float: left">Orders</h2>
+<div class="jumbotron col-10 offset-1">
+    <div class="row col-12">
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3" style="height:300px; width:850px;">
+            <canvas id="ordersPerMonth" width="850" height="300"></canvas>
+        </div>
+
+
+    <div class="row col-12">
+    </div>
+</div>
+
+
+<script>
+var ctx = document.getElementById('ordersPerMonth').getContext('2d');
+var nums = <%= @monthNums.to_json.html_safe %>
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        datasets: [{
+            label: "Orders",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [1, 2, 4, 6, 7, 12, 4, 6, 6, 12, 4, 2]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        title:{
+            display:true,
+            text:'Orders Per Month' 
+        },
+        scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+    }
+});
+
+
+
+</script>

@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -21,6 +22,10 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def checkout
+    order = Order.new(order_params)
+    order.save
+  end
   # POST /orders
   # POST /orders.json
   def create
@@ -69,6 +74,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:transaction_type, :date_time, :users_id)
+      params.require(:order).permit(:id, :subtotal, :tax, :shipping, :total, :order_status_id, :created_at, :updated_at, :users_id)
     end
 end

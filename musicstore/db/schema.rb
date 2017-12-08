@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130172741) do
+ActiveRecord::Schema.define(version: 20171205172723) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -35,20 +35,35 @@ ActiveRecord::Schema.define(version: 20171130172741) do
     t.string "phone", limit: 45
   end
 
-  create_table "orders", primary_key: ["order_id", "users_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "order_id", null: false
-    t.string "transaction_type", limit: 45
-    t.datetime "date_time"
-    t.bigint "users_id", null: false
-    t.index ["users_id"], name: "fk_orders_users1_idx"
+  create_table "order_items", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "product_id"
+    t.bigint "order_id"
+    t.decimal "unit_price", precision: 12, scale: 3
+    t.integer "quantity"
+    t.decimal "total_price", precision: 12, scale: 3
+    t.index ["order_id"], name: "order_id"
+    t.index ["product_id"], name: "product_id"
   end
 
-  create_table "orders_has_products", primary_key: ["orders_order_id", "orders_users_id", "products_product_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "orders_order_id", null: false
-    t.bigint "orders_users_id", null: false
-    t.integer "products_product_id", null: false
-    t.index ["orders_order_id", "orders_users_id"], name: "fk_orders_has_products_orders1_idx"
-    t.index ["products_product_id"], name: "fk_orders_has_products_products1_idx"
+  create_table "order_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.decimal "subtotal", precision: 12, scale: 3
+    t.decimal "tax", precision: 12, scale: 3
+    t.decimal "shipping", precision: 12, scale: 3
+    t.decimal "total", precision: 12, scale: 3
+    t.bigint "order_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+  end
+
+  create_table "orderstatus", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
   end
 
   create_table "products", primary_key: "product_id", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -76,12 +91,14 @@ ActiveRecord::Schema.define(version: 20171130172741) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "superadmin_role", default: false
+    t.boolean "supervisor_role", default: false
+    t.boolean "user_role", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "orders", "users", column: "users_id", name: "fk_orders_users1"
-  add_foreign_key "orders_has_products", "orders", column: "orders_order_id", primary_key: "order_id", name: "fk_orders_has_products_orders1"
-#  add_foreign_key "orders_has_products", "orders", column: "orders_users_id", primary_key: "users_id", name: "fk_orders_has_products_orders1"
-  add_foreign_key "orders_has_products", "products", column: "products_product_id", primary_key: "product_id", name: "fk_orders_has_products_products1"
+  add_foreign_key "order_items", "orders", name: "order_items_ibfk_2"
+  add_foreign_key "order_items", "products", primary_key: "product_id", name: "order_items_ibfk_1"
+  add_foreign_key "orders", "order_statuses"
 end
